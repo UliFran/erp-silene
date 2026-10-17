@@ -266,3 +266,13 @@ Acesso: http://localhost:8765/index.html
 - RLS aberta para testes — **NÃO usar em produção**.
 - Todas as tabelas de teste foram zeradas (100% do zero) em 2026-10-17.
 - O modelo usado neste projeto: Beam Free (OpenCode).
+
+## 13. REPOSITÓRIO / DEPLOY
+
+- **GitHub:** https://github.com/UliFran/erp-silene
+- **Branch principal:** `main`
+- **GitHub Pages:** https://ulifran.github.io/erp-silene/
+- **Último commit:** Initial commit (ERP Silene - estoque + Supabase)
+- **Remote (sem token):** https://github.com/UliFran/erp-silene.git
+- Para novo push: `git add -A && git commit -m "..." && git push`
+- Ativar Pages: Settings → Pages → Source: Deploy from branch → main / (root)
