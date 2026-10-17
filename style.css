@@ -1,0 +1,699 @@
+/* Configurações Gerais - Tema Light Mode Clean (Hub de Eficiência) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+   /* FUNDO REALISTA: Camadas de degradê que criam os veios do mármore branco */
+    background-color: #fff7fa;
+    background-image: 
+        /* Ruído/grão sutil (textura de papel) */
+        url("data:image/svg+xml,%3Csvg%20viewBox='0%200%20200%20200'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'%20opacity='0.35'/%3E%3C/svg%3E"),
+        /* Textura de seda/linho - diagonal 1 */
+        repeating-linear-gradient(45deg, 
+            transparent 0px, 
+            transparent 1px, 
+            rgba(255, 255, 255, 0.55) 2px, 
+            rgba(255, 255, 255, 0.55) 3px
+        ),
+        /* Textura de seda/linho - diagonal 2 (cruzada) */
+        repeating-linear-gradient(135deg, 
+            transparent 0px, 
+            transparent 1px, 
+            rgba(255, 192, 203, 0.18) 2px, 
+            rgba(255, 192, 203, 0.18) 3px
+        ),
+        /* Luz bokeh rosa - ponto 1 */
+        radial-gradient(circle at 18% 25%, rgba(251, 182, 206, 0.45) 0px, transparent 160px),
+        /* Luz bokeh lavanda - ponto 2 */
+        radial-gradient(circle at 82% 18%, rgba(221, 214, 254, 0.40) 0px, transparent 180px),
+        /* Luz bokeh pêssego - ponto 3 */
+        radial-gradient(circle at 72% 78%, rgba(254, 215, 170, 0.35) 0px, transparent 200px),
+        /* Luz bokeh branco - ponto 4 */
+        radial-gradient(circle at 28% 82%, rgba(255, 255, 255, 0.60) 0px, transparent 150px),
+        /* Luz bokeh rose - ponto 5 */
+        radial-gradient(circle at 52% 50%, rgba(252, 231, 243, 0.30) 0px, transparent 230px),
+        /* Base gradient suave blush */
+        linear-gradient(135deg, #fff7fa 0%, #fef3f7 40%, #fdf2f8 70%, #fff7fa 100%);
+    background-attachment: fixed; /* O fundo fica fixo enquanto você rola a página */
+    min-height: 100vh; /* Garante que o fundo cubra toda a tela */
+    color: #334155; 
+    padding-bottom: 40px;
+    position: relative;
+}
+
+/* Opcional: Efeito extra de brilho polido por cima de tudo (desativado para não cobrir o fundo de mármore) */
+/* body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+} */
+
+/* Barra de Navegação Superior (Header) */
+/* ==========================================================================
+   BARRA DE NAVEGAÇÃO LUXO - PELE DE COBRA COM CROMADO
+   ========================================================================== */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    position: relative;
+    
+    /* FUNDO TEXTURIZADO: Efeito matemático simulando escamas de pele de cobra */
+    background-color: #111827;
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(31, 41, 55, 0.6) 20%, transparent 20%, transparent 80%, rgba(31, 41, 55, 0.6) 80%),
+        radial-gradient(circle at 0% 0%, rgba(17, 24, 39, 0.9) 40%, transparent 40%),
+        radial-gradient(circle at 100% 0%, rgba(17, 24, 39, 0.9) 40%, transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(17, 24, 39, 0.9) 40%, transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(17, 24, 39, 0.9) 40%, transparent 40%);
+    background-size: 16px 16px; /* Tamanho das escamas da cobra */
+    
+    /* BORDA INFERIOR CROMADA: Simula o reflexo metálico polido */
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(
+        90deg, 
+        #94a3b8 0%, 
+        #f8fafc 25%, 
+        #cbd5e1 50%, 
+        #ffffff 75%, 
+        #475569 100%
+    ) 1;
+    
+    /* Sombra profunda para destacar o relevo da barra */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste do Texto da Logo dentro da Barra Texturizada */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+/* Ícone da logo com efeito cromado brilhante */
+.logo i {
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 40%, #94a3b8 60%, #ffffff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+}
+
+/* Texto HUB com destaque prateado polido */
+.logo span strong {
+    background: linear-gradient(to bottom, #ffffff 0%, #e2e8f0 50%, #94a3b8 55%, #f8fafc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+}
+
+/* Detalhes do Perfil da Silene na direita */
+.user-profile span {
+    color: #cbd5e1;
+    font-weight: 500;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Borda cromada ao redor do Avatar circular */
+.avatar {
+    width: 38px;
+    height: 38px;
+    background-color: #1e293b;
+    border: 2px solid transparent;
+    border-image: linear-gradient(135deg, #ffffff, #64748b, #ffffff) 1;
+    border-radius: 50%; /* Mantém o corte redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.logo i {
+    color: #38bdf8; /* Azul brilhante na logo */
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-profile span {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background-color: #334155;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+/* Layout Principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.welcome-section h1 {
+    font-size: 2.4rem;
+    color: #0f172a; /* Título principal escuro */
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.welcome-section p {
+    color: #64748b; /* Subtítulo cinza intermediário */
+    font-size: 1.1rem;
+}
+
+/* Buscador Unificado Principal */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+#buscador {
+    width: 100%;
+    padding: 16px 16px 16px 55px;
+    background-color: #ffffff; /* Caixa de busca branca */
+    border: 1px solid #cbd5e1;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #0f172a; /* Texto digitado fica escuro */
+    outline: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+#buscador::placeholder {
+    color: #94a3b8;
+}
+
+#buscador:focus {
+    border-color: #3b82f6; /* Borda azul ao focar */
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+}
+
+/* Grade de Cards */
+.grid-modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Estilo dos Cards Individuais - Fundo Branco */
+.card {
+    background-color: #ffffff; /* Cards totalmente limpos e brancos */
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-bottom: 22px;
+}
+
+/* Cores de Fundo Suaves para os Ícones */
+.blue { background-color: #eff6ff; color: #2563eb; }
+.green { background-color: #f0fdf4; color: #16a34a; }
+.purple { background-color: #faf5ff; color: #9333ea; }
+.gold { background-color: #fefce8; color: #ca8a04; }
+
+.card h3 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Botões Escuros para Alto Contraste */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0f172a; /* Botão escuro */
+    color: #ffffff; /* Texto branco */
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1e293b;
+    transform: scale(1.02);
+}
+
+/* ==========================================================================
+   ESTILOS DA JANELA MODAL (LIGHT MODE)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.6); /* Sombra de fundo suave */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-box {
+    background-color: #ffffff; /* Fundo do modal branco */
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 1.4rem;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text-blue { color: #2563eb; }
+
+.btn-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-close:hover { color: #ef4444; }
+
+.modal-body {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Campos de Formulário */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    color: #475569;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group select, 
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #f8fafc; /* Campos levemente cinzas para destacar */
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #0f172a;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.form-group select:focus, 
+.form-group input[type="text"]:focus {
+    border-color: #2563eb;
+    background-color: #ffffff;
+}
+
+/* Lista de Sugestões de Produtos */
+.lista-resultados {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+    margin-top: 5px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+.item-busca {
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    color: #334155;
+}
+
+.item-busca:hover {
+    background-color: #f8fafc;
+}
+
+.item-busca .sku { color: #94a3b8; font-size: 0.85rem; margin-right: 8px; }
+.item-busca .preco { color: #16a34a; font-weight: bold; }
+
+/* Lista de Itens Adicionados */
+.venda-itens-container {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.venda-itens-container h4 {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 5px;
+}
+
+.txt-vazio { color: #94a3b8; font-size: 0.9rem; text-align: center; padding: 10px 0; }
+
+.item-adicionado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #edf2f7;
+    color: #0f172a;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Resumo e Desconto */
+.venda-resumo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #865959;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 15px;
+}
+
+.form-group-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #475569;
+}
+
+.form-group-inline input {
+    width: 70px;
+    padding: 8px;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    color: #0f172a;
+    text-align: center;
+}
+
+.total-box {
+    text-align: right;
+}
+
+.total-box span { color: #64748b; font-size: 0.9rem; margin-right: 5px;}
+.total-box strong { color: #16a34a; font-size: 1.4rem; }
+
+/* Rodapé do Modal */
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    background-color: #64748b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-success {
+    padding: 10px 20px;
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-success:hover { background-color: #15803d; }
+/* Alinhamento de formulários em duas colunas responsivas */
+.grid-form-2-colunas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.text-green {
+    color: #16a34a;
+}
+
+/* Garante que inputs numéricos do formulário sigam o mesmo padrão visual */
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #0f172a;
+    outline: none;
+    font-size: 0.95rem;
+}
+.form-group input[type="number"]:focus {
+    border-color: #16a34a;
+}
+/* Efeito de Ouro Imperial para a palavra HUB */
+.logo span strong:first-child {
+    background: linear-gradient(135deg, #ffe066 0%, #f59e0b 50%, #b45309 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.4));
+}
+/* ==========================================================================
+   ESTOQUE - ABAS, TABELAS E FORMULARIOS
+   ========================================================================== */
+.modal-box-wide { max-width: 960px; }
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+.tab-btn {
+    padding: 8px 14px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #475569;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+.tab-btn:hover { background: #eef2f7; }
+.tab-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+.form-row input, .form-row select { flex: 1; min-width: 160px; }
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+.form-actions { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+
+.table-wrap {
+    max-height: 320px;
+    overflow: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+.data-table th, .data-table td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+    white-space: nowrap;
+}
+.data-table th { background: #f8fafc; color: #475569; font-weight: 600; position: sticky; top: 0; }
+.data-table tbody tr:hover { background: #f8fafc; }
+.data-table .btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 2px 6px;
+    color: #64748b;
+}
+.data-table .btn-icon:hover { color: #ef4444; }
+.data-table .btn-icon.edit:hover { color: #2563eb; }
+
+.subtitulo { color: #475569; font-size: 0.95rem; margin: 14px 0 6px; }
+.resumo-box { margin-top: 12px; padding: 10px; background: #f8fafc; border-radius: 8px; text-align: right; }
+.resumo-box strong { color: #16a34a; }
+
+.status-ok { color: #16a34a; font-weight: 600; }
+.status-baixo { color: #dc2626; font-weight: 600; }
+.status-entrada { color: #16a34a; font-weight: 600; }
+.status-saida { color: #dc2626; font-weight: 600; }
+.chips-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #f8fafc;
+    min-height: 40px;
+}
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+.chip.selected {
+    background: #16a34a;
+    color: #fff;
+}
+.chip .chip-remove { font-size: 0.75rem; opacity: 0.8; }
+.chip-group { margin-bottom: 8px; }
+.chip-group-label { font-size: 0.75rem; color: #64748b; font-weight: 600; margin-bottom: 4px; display: block; }
+@media print {
+    body * { visibility: hidden; }
+    #print-estoque, #print-estoque * { visibility: visible; }
+    #print-estoque { position: absolute; left: 0; top: 0; width: 100%; }
+}
