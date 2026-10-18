@@ -7,53 +7,15 @@
 }
 
 body {
-   /* FUNDO REALISTA: Camadas de degradê que criam os veios do mármore branco */
-    background-color: #fff7fa;
-    background-image: 
-        /* Ruído/grão sutil (textura de papel) */
-        url("data:image/svg+xml,%3Csvg%20viewBox='0%200%20200%20200'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'%20opacity='0.35'/%3E%3C/svg%3E"),
-        /* Textura de seda/linho - diagonal 1 */
-        repeating-linear-gradient(45deg, 
-            transparent 0px, 
-            transparent 1px, 
-            rgba(255, 255, 255, 0.55) 2px, 
-            rgba(255, 255, 255, 0.55) 3px
-        ),
-        /* Textura de seda/linho - diagonal 2 (cruzada) */
-        repeating-linear-gradient(135deg, 
-            transparent 0px, 
-            transparent 1px, 
-            rgba(255, 192, 203, 0.18) 2px, 
-            rgba(255, 192, 203, 0.18) 3px
-        ),
-        /* Luz bokeh rosa - ponto 1 */
-        radial-gradient(circle at 18% 25%, rgba(251, 182, 206, 0.45) 0px, transparent 160px),
-        /* Luz bokeh lavanda - ponto 2 */
-        radial-gradient(circle at 82% 18%, rgba(221, 214, 254, 0.40) 0px, transparent 180px),
-        /* Luz bokeh pêssego - ponto 3 */
-        radial-gradient(circle at 72% 78%, rgba(254, 215, 170, 0.35) 0px, transparent 200px),
-        /* Luz bokeh branco - ponto 4 */
-        radial-gradient(circle at 28% 82%, rgba(255, 255, 255, 0.60) 0px, transparent 150px),
-        /* Luz bokeh rose - ponto 5 */
-        radial-gradient(circle at 52% 50%, rgba(252, 231, 243, 0.30) 0px, transparent 230px),
-        /* Base gradient suave blush */
-        linear-gradient(135deg, #fff7fa 0%, #fef3f7 40%, #fdf2f8 70%, #fff7fa 100%);
-    background-attachment: fixed; /* O fundo fica fixo enquanto você rola a página */
-    min-height: 100vh; /* Garante que o fundo cubra toda a tela */
-    color: #334155; 
-    padding-bottom: 40px;
-    position: relative;
+   /* Fundo mais limpo e moderno */
+   background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+   background-attachment: fixed;          /* efeito parallax opcional */
+   min-height: 100vh;                     /* ocupa toda a tela */
+   color: #1e293b;                       /* texto escuro intermediário */
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+   padding-bottom: 40px;
+   position: relative;
 }
-
-/* Opcional: Efeito extra de brilho polido por cima de tudo (desativado para não cobrir o fundo de mármore) */
-/* body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 1;
-} */
 
 /* Barra de Navegação Superior (Header) */
 /* ==========================================================================
